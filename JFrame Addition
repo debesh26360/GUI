@@ -26,7 +26,7 @@ public class JFrameExample extends JFrame implements ActionListener
            l1.setBounds(360,120,60,30);  
           
            b1=new JButton("+");
-           b1.setBounds(180,160,80,30);
+           b1.setBounds(220,160,45,30);
            
            b2=new JButton("clear");
            b2.setBounds(270,280,80,30);

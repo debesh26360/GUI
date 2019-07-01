@@ -1,0 +1,72 @@
+
+package jframeexample;
+import java.awt.event.*;
+import javax.swing.*;
+public class JFrameExample extends JFrame
+{
+    JLabel l1,l2,l3,l4;
+    JTextField t1,t2;
+    JButton b1;
+    
+    public JFrameExample()
+    {
+        
+    }
+    
+    public JFrameExample(String s)
+    {
+        super(s);
+    }
+    
+    public void setComponents()
+    {
+        l1=new JLabel("Addition of two numbers");
+        l2=new JLabel("First Number");
+        l3=new JLabel("Second Number");
+        l4=new JLabel();
+        t1=new JTextField();
+        t2=new JTextField();
+        b1=new JButton("Add");
+        setLayout(null);
+        
+        l1.setBounds(50, 50, 200, 100);
+        l2.setBounds(50, 50, 200, 100);
+        l3.setBounds(50, 50, 200, 100);
+        l4.setBounds(50, 50, 200, 100);
+        t1.setBounds(50, 50, 200, 100);
+        t2.setBounds(50, 50, 200, 100);
+        b1.addActionListener(new Handler());
+        
+        add(l1);
+        add(l2);
+        add(l3);
+        add(l4);
+        add(t1);
+        add(t2);
+    }
+    class Handler implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent e) 
+        {
+           
+        
+            int a=Integer.parseInt(t1.getText());
+            int b=Integer.parseInt(t2.getText());
+            String s=null;
+            l4.setText("Result is"+s);
+        }
+    }
+    public static void main(String[] args) 
+    {
+        JFrameExample jf=new JFrameExample("Demo");
+        jf.setComponents();
+        
+        jf.setVisible(true);
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jf.setSize(300, 300);
+        jf.setTitle("demo");
+    }
+    
+}

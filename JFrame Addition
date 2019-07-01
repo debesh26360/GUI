@@ -1,0 +1,78 @@
+ package jframeexample;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+public class JFrameExample extends JFrame implements ActionListener
+
+{
+    JTextField tf1,tf2;
+    JLabel l1,l2;
+    JButton b1,b2;
+    public JFrameExample()
+    {
+           tf1=new JTextField();
+           tf1.setBounds(180,120,60,30);
+          
+           tf2=new JTextField();
+           tf2.setBounds(250,120,60,30);
+           
+           l2=new JLabel("=");
+           l2.setBounds(320,120,30,20);
+           
+           l1=new JLabel("Answer");
+           l1.setBounds(360,120,60,30);  
+          
+           b1=new JButton("+");
+           b1.setBounds(180,160,80,30);
+           
+           b2=new JButton("clear");
+           b2.setBounds(270,280,80,30);
+           
+           add(l2);
+           add(l1);
+           add(tf1);
+           add(b1);
+           add(tf2);
+           add(b2);
+           
+           b1.addActionListener(this );
+           b2.addActionListener(this);
+           
+           setTitle("Demo");
+           setSize(600,600);
+           setLayout(null);
+           setVisible(true);
+        
+    }
+     @Override
+    public void actionPerformed(ActionEvent e) 
+    {
+        if(e.getSource()==b1)
+        {
+           int n1=Integer.parseInt(tf1.getText());
+           int n2=Integer.parseInt(tf2.getText());
+           int res=n1+n2;
+           String rs=Integer.toString(res);
+           l1.setText(rs);
+        }
+        
+        else
+        {
+            tf1.setText("");
+            tf2.setText("");                   
+            l1.setText("Answer");
+        }
+        
+        
+    }
+    
+    public static void main(String[] args) 
+    {
+       JFrameExample a=new JFrameExample(); 
+    }
+
+ 
+    }
